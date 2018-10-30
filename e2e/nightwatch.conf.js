@@ -8,6 +8,7 @@ const reports_path = 'e2e/reports'
 const config = {
 	src_folders: ['e2e/features'],
 	output_folder : reports_path,
+	page_objects_path: 'e2e/page-objects',
 	selenium: {
 		// Information for selenium, such as the location of the drivers ect.
 		start_process: true,
