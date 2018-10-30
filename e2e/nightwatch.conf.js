@@ -8,7 +8,7 @@ var config = {
 		// Folders with tests
 		'e2e/features'
 	],
-	output_folder: 'reports', // Where to output the test reports
+	output_folder : 'e2e/reports',
 	selenium: {
 		// Information for selenium, such as the location of the drivers ect.
 		start_process: true,
@@ -17,7 +17,8 @@ var config = {
 		cli_args: {
 			'webdriver.chrome.driver': chromedriver.path,
 			'webdriver.gecko.driver': geckodriver.path
-		}
+		},
+		log_path: false
 	},
 	test_workers: {
 		// This allows more then one browser to be opened and tested in at once
