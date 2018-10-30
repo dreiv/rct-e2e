@@ -1,14 +1,13 @@
 // Get Selenium and the drivers
-var seleniumServer = require('selenium-server')
-var chromedriver = require('chromedriver')
-var geckodriver = require('geckodriver')
+const seleniumServer = require('selenium-server')
+const chromedriver = require('chromedriver')
+const geckodriver = require('geckodriver')
 
-var config = {
-	src_folders: [
-		// Folders with tests
-		'e2e/features'
-	],
-	output_folder : 'e2e/reports',
+const reports_path = 'e2e/reports'
+
+const config = {
+	src_folders: ['e2e/features'],
+	output_folder : reports_path,
 	selenium: {
 		// Information for selenium, such as the location of the drivers ect.
 		start_process: true,
@@ -18,7 +17,7 @@ var config = {
 			'webdriver.chrome.driver': chromedriver.path,
 			'webdriver.gecko.driver': geckodriver.path
 		},
-		log_path: false
+		log_path: reports_path
 	},
 	test_workers: {
 		// This allows more then one browser to be opened and tested in at once
@@ -54,14 +53,6 @@ var config = {
 		firefox: {
 			desiredCapabilities: {
 				browserName: 'firefox',
-				javascriptEnabled: true,
-				acceptSslCerts: true,
-				nativeEvents: true
-			}
-		},
-		safari: {
-			desiredCapabilities: {
-				browserName: 'safari',
 				javascriptEnabled: true,
 				acceptSslCerts: true,
 				nativeEvents: true
